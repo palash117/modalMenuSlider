@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-background-color: #8bd4dc;
+  --secondary-color: #dc8bd4;
+  --tertiary-color: #d4dc8b;
+  --nav-width: 220px;
+  --nav-width-neg: -220px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+.mainContainer {
+  /* display: flex;
+  flex-direction: row;
+  height: 100vh;
+  justify-content: left; 
+  */
+}
+.sideBar {
+  background-color: var(--secondary-color);
+  position: fixed;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: var(--nav-width);
+  overflow: hidden;
+  transform: translateX(var(--nav-width-neg));
+  transition: transform 0.3s ease;
+}
+.hide {
+  transform: translateX(0px);
+  transition: transform 0.3s ease;
+}
+.sideBar img {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  margin: 10px 10px;
+}
+
+.linkUl {
+  margin: 0;
+  padding: 0;
+  /* background-color: black; */
+  /* padding-inline-start: 0; */
+  width: 200px;
+}
+
+.sideBar ul li {
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+  list-style-type: none;
+  border-bottom: 1px solid black;
+  width: var(--nav-width);
+}
+.sideBar ul li:nth-of-type(1) {
+  border-top: 1px solid black;
+}
+
+.subContainer {
+  position: relative;
+  transform: translateX(0px);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.subContainer h3 {
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--tertiary-color);
+  border-radius: 10%;
+}
+
+.headerContainer {
+  background-color: var(--primary-background-color);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contentPage {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding: 100px 100px;
+}
+.toggleNav {
+  /* float: left; */
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.toggleRegistration {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  font-size: 150%;
+}
+.toggleRegistration:hover {
+  outline: none;
+  font-size: 200%;
+  transform: translate3d(10%, -10%, 0);
+}
+.toggleRegistration:focus {
+  outline: none;
+}
+.para {
+  padding: 20px;
+}
+.para ul {
+  margin-left: 20px;
+  padding: 10px;
+}
+.para ul li {
+  padding: 5px;
+}
+.para h4 {
+  background-color: var(--tertiary-color);
+  text-align: center;
+  /* width: fit-content; */
+  padding: 10px;
+  border-radius: 5px;
+  /* align-self: center; */
+}
+.para p {
+  padding: 5px 0;
+}
+.slide {
+  transform: translateX(var(--nav-width));
+  transition: transform 0.3s ease;
+}
+.registrationFormContainer {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color:  */
+  /* display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center; */
+  z-index: 200;
+  /* display: none; */
+}
+.registrationForm {
+  position: fixed;
+  width: 500px;
+  height: 300px;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-250px, -200px, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 250;
+}
+.registrationFormElements {
+  margin: 10px, 0;
+  padding: 10px, 0;
+}
+.registrationPart {
+  padding: 10px;
+  margin: 10px 0;
+}
+.registrationPart label {
+  float: left;
+}
+.registrationPart input {
+  float: right;
+}
+.registrationFormHeader {
+  background-color: var(--tertiary-color);
+  padding: 10px;
+  border-radius: 5px;
+}
+.registrationForm:last-child {
+  /* margin-bottom: px; */
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 2px solid black;
+}
+.registrationForm:first-child {
+  border-top: 2px solid black;
+}
+.registrationSubmition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.registrationButton {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.registrationButton h4 {
+  background-color: var(--tertiary-color);
+  padding: 10px;
+  border-radius: 5px;
+}
+.registrationClose {
+  position: absolute;
+  top: 5%;
+  left: 95%;
+  /* transform: translate3d(250px, -150px, 0); */
+  /* transform: translate(-20px); */
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+}
+
+.registrationClose:hover {
+  outline: 0;
+  font-size: 120%;
+  transform: translate3d(-9%, -9%, 0);
+}
+.registrationClose:focus {
+  outline: 0;
+  font-size: 120%;
+  transform: translate3d(-9%, -9%, 0);
+}
+.removeRegistrationForm {
+  visibility: hidden;
+}
